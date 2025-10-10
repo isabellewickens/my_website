@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00aeff;
+    color: white;
+    padding: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Each box */
+.box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.box:hover {
+  transform: translateY(-5px);
+  background-color: #fefefe;
+}
+
+/* Buttons */
+button, .link-button {
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, .link-button:hover {
+  background-color: #005fcc;
+}
