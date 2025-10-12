@@ -48,6 +48,12 @@ colorButton.addEventListener('click', () => {
     btn.style.color = textColor2;
     });
 
+    const homeButton = document.querySelector('.home-button');
+    if (homeButton) {
+    homeButton.style.backgroundColor = buttonColor;
+    homeButton.style.color = textColor2;
+    }
+
     hoverStyle.textContent = `
     button:hover, .link-button:hover {
     background-color: ${hoverColor} !important;
