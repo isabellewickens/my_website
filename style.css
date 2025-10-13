@@ -45,7 +45,7 @@ h1 {
 }
 
 body > main {
-  margin-top: 100px; /* adjust to match header height */
+  margin-top: 180px;
 }
 
 .box-container {
@@ -107,5 +107,31 @@ button:hover, .link-button:hover {
 
 .home-button:hover {
   background-color: #3c3c3cff;
-  transform: translateY(-2px);
+}
+
+#clicker-game {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #b2d8b2;
+  border-radius: 10px;
+}
+
+#clicker {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#clicker:hover {
+  background-color: #81c784;
+}
+
+#message {
+  margin-top: 15px;
+  font-weight: bold;
 }

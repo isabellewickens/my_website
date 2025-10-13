@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const colorButton = document.getElementById('colorButton');
 
-    const colorPairs = [
-      ['#ffffff', '#000000', '#bfbfbfff', '#000000ff', '#3c3c3cff','#ffffffff'],
-      ['#0fffbf', '#000000', '#00ffff', '#ff00ff', '#ff66ff', '#000000'],
-      ['#ff4500', '#ffffff', '#ff8c42', '#ff6347', '#ff7f50', '#ffffff'],
-      ['#fff4e6', '#5a2e1c', '#f6b26b', '#d97434', '#ff8c42', '#5a2e1c'],
-      ['#6a0dad', '#f8f0ff', '#9b30ff', '#8a2be2', '#a64ca6', '#ffffff'],
-      ['#ffedf7', '#300032', '#ff92c2', '#ff0066', '#ff3399', '#ffffff'],
-      ['#ffdd00', '#000000', '#ffd633', '#ff9900', '#ffcc33', '#000000'],
-      ['#0077ff', '#ffffff', '#00bfff', '#00ffff', '#66ffff', '#000000'],
-      ['#f0fff4', '#2f4f2f', '#b2d8b2', '#4caf50', '#81c784', '#ffffff'],
-      ['#fff8f0', '#3c2f2f', '#f2d1c9', '#d27c7c', '#f5bcbc', '#3c2f2f'],
-      ['#00008b', '#000000ff', '#00b7ffff', '#0077ff', '#005fcc', '#ffffffff'],
-    ];
+const colorPairs = [
+    ['#1E2A38', '#E3E9F0', '#334E68', '#5B7B91', '#9FBACD', '#dde9f1ff'],
+    ['#f8c6e1ff', '#300032', '#ff92c2', '#ff008cff', '#ff3399', '#ffffff'],
+    ['#8cb8e6ff', '#000000ff', '#b2d4f2', '#4a90e2', '#81b3f4', '#ffffff'],
+    ['#0B132B', '#d0d0d0ff', '#1C2541', '#3A506B', '#293e57ff', '#aec8d0ff'],
+    ['#89bc80ff', '#000000ff', '#b2d8b2', '#4caf50', '#81c784', '#ffffff'],
+    ['#6a0dad', '#f8f0ff', '#9b30ff', '#5c01b1ff', '#631dc7ff', '#ffffff'],
+    ['#0077ff', '#000000ff', '#00bfff', '#1e46d6ff', '#2063ffff', '#ffffffff'],
+    ['#1B3B1A', '#E5F4E3', '#2E5939', '#8FB996', '#729473ff', '#000000ff'],
+    ['#e5e5e5ff', '#000000', '#bfbfbfff', '#4b4b4bff', '#3c3c3cff', '#ffffffff'],
+ 
+];
+
 
     // Read saved global color index or default to -1
     let index = parseInt(localStorage.getItem('globalColorIndex')) || -1;
@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.color = textColor;
         }
 
+        const h1 = document.querySelectorAll('h1');
+        h1.forEach(el => el.style.color = textColor); // <-- set new color
+
         document.querySelectorAll('button, .link-button').forEach(btn => {
             btn.style.backgroundColor = buttonColor;
             btn.style.color = textColor2;
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         hoverStyle.textContent = `
-            button:hover, .link-button:hover {
+            button:hover, .link-button:hover, .home-button:hover {
                 background-color: ${hoverColor} !important;
                 color: ${textColor2} !important;
             }
@@ -67,4 +70,32 @@ document.addEventListener('DOMContentLoaded', () => {
             applyColors(index);
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Clicker Game
+  let score = 0;
+  let startTime = null;
+  const target = 100;
+
+  const scoreDisplay = document.getElementById('score');
+  const clicker = document.getElementById('clicker');
+  const message = document.getElementById('message');
+
+  clicker.addEventListener('click', () => {
+    // Start timer on first click
+    if (score === 0) startTime = Date.now();
+
+    score++;
+    scoreDisplay.textContent = score;
+
+    if (score >= target) {
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+      message.textContent = `🎉 You reached ${target} clicks in ${elapsed} seconds!`;
+      score = 0;            // reset for next round
+      scoreDisplay.textContent = score;
+      startTime = null;
+    }
+  });
+
 });
