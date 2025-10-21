@@ -81,6 +81,20 @@ body > main {
   text-align: left;
 }
 
+.job-entry {
+    display: flex;
+    justify-content: space-between; /* title left, date right */
+    align-items: center;            /* vertical alignment */
+    padding: 20px;
+}
+
+.job-entry h2, .job-entry .date {
+    margin: 0;           /* remove default spacing */
+    font-size: 1.5em;    /* match H2 size */
+    font-weight: 700;    /* bold like H2 */
+    line-height: 1.2;    /* align perfectly */
+}
+
 /* Buttons */
 button, .link-button {
   background-color: #000000;
