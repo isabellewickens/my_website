@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
+    color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -54,7 +55,7 @@ body > main {
   justify-content: center; /* centers the boxes horizontally */
   gap: 20px;
   width: 100%;
-  padding: 40px 0px;
+  padding: 0px 0px;
 }
 
 /* Each box */
@@ -73,6 +74,11 @@ body > main {
   align-items: center;  /* horizontal center */
   justify-content: center;  /* vertical center */
   height: 200px; /* or whatever height you want */
+}
+
+.section {
+  padding: 20px;
+  text-align: left;
 }
 
 /* Buttons */
@@ -103,6 +109,11 @@ button:hover, .link-button:hover {
   text-decoration: none;
   cursor: pointer;
   z-index: 1000;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
 .home-button:hover {

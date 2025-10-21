@@ -25,6 +25,7 @@ const colorPairs = [
         const [bgColor, textColor, boxColor, buttonColor, hoverColor, textColor2] = colorPairs[idx];
 
         document.body.style.backgroundColor = bgColor;
+        document.body.style.color = textColor;
 
         document.querySelectorAll('.box').forEach(box => {
             box.style.backgroundColor = boxColor;
